@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active - NoActive</title>
+    <style>
+        #teste {
+            display: none;
+        }
+
+        #active {
+            display: block;
+        }
+
+        #noactive {
+            display: none;
+        }
+    </style>
+    <script>
+        function validaCheck() 
+        {
+            var check = document.getElementById('inputcheck');
+            
+            if (check.checked)
+            {
+                var divInput = document.getElementById('teste');
+                if (divInput != undefined || divInput != null)
+                {
+                    divInput.setAttribute('id', 'active');
+                }
+                else
+                {
+                    var divActive = document.getElementById('active');
+                    if (divActive != undefined || divActive != null)
+                    {
+                        divActive.setAttribute('id', 'noactive');
+                    }
+                    else 
+                    {
+                        var divNoactive = document.getElementById('noactive');
+                        if (divNoactive != undefined || divNoactive != null)
+                        {
+                            divNoactive.setAttribute('id', 'active');
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var divActive = document.getElementById('active');
+                if (divActive != undefined || divActive != null)
+                {
+                    divActive.setAttribute('id', 'noactive');
+                }
+                else 
+                {
+                    var divNoactive = document.getElementById('noactive');
+                    if (divNoactive != undefined || divNoactive != null)
+                    {
+                        divNoactive.setAttribute('id', 'active');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="teste1 teste2" id="teste">
+        <input type="text" id="input" name="digitos" title="entrada">
+    </div>
+
+    <div id="check">
+        <input type="checkbox" name="check" id="inputcheck" onclick="validaCheck()">
+        <label for="inputcheck">Check</label>
+    </div>
+</body>
+</html>
