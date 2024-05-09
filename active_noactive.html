@@ -34,14 +34,14 @@
                     var divActive = document.getElementById('active');
                     if (divActive != undefined || divActive != null)
                     {
-                        divActive.setAttribute('id', 'noactive');
+                        DivNoActive(divActive);
                     }
                     else 
                     {
                         var divNoactive = document.getElementById('noactive');
                         if (divNoactive != undefined || divNoactive != null)
                         {
-                            divNoactive.setAttribute('id', 'active');
+                            DivActive(divNoactive);
                         }
                     }
                 }
@@ -51,17 +51,25 @@
                 var divActive = document.getElementById('active');
                 if (divActive != undefined || divActive != null)
                 {
-                    divActive.setAttribute('id', 'noactive');
+                    DivNoActive(divActive);
                 }
                 else 
                 {
                     var divNoactive = document.getElementById('noactive');
                     if (divNoactive != undefined || divNoactive != null)
                     {
-                        divNoactive.setAttribute('id', 'active');
+                        DivActive(divNoactive);
                     }
                 }
             }
+        }
+
+        function DivActive(divNoactive) {
+            divNoactive.setAttribute('id', 'active');
+        }
+
+        function DivNoActive(divActive) {
+            divActive.setAttribute('id', 'noactive');
         }
     </script>
 </head>
